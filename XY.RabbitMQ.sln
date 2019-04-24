@@ -47,25 +47,4 @@ Global
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {72CEA331-E5E8-4C0B-811A-3E6D1A91D7B7}
 	EndGlobalSection
-	GlobalSection(TeamFoundationVersionControl) = preSolution
-		SccNumberOfProjects = 5
-		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
-		SccTeamFoundationServer = https://qwj2007.visualstudio.com/
-		SccLocalPath0 = .
-		SccProjectUniqueName1 = XY.RabbitMQ.Client\\XY.RabbitMQ.Client.csproj
-		SccProjectTopLevelParentUniqueName1 = XY.RabbitMQ.sln
-		SccProjectName1 = XY.RabbitMQ.Client
-		SccLocalPath1 = XY.RabbitMQ.Client
-		SccProjectUniqueName2 = XY.RabbitMQ.Framework\\XY.RabbitMQ.Framework.csproj
-		SccProjectName2 = XY.RabbitMQ.Framework
-		SccLocalPath2 = XY.RabbitMQ.Framework
-		SccProjectUniqueName3 = XY.RabbitMQ.Message\\XY.RabbitMQ.Message.csproj
-		SccProjectTopLevelParentUniqueName3 = XY.RabbitMQ.sln
-		SccProjectName3 = XY.RabbitMQ.Message
-		SccLocalPath3 = XY.RabbitMQ.Message
-		SccProjectUniqueName4 = XY.RabbitMQ.Server\\XY.RabbitMQ.Server.csproj
-		SccProjectTopLevelParentUniqueName4 = XY.RabbitMQ.sln
-		SccProjectName4 = XY.RabbitMQ.Server
-		SccLocalPath4 = XY.RabbitMQ.Server
-	EndGlobalSection
 EndGlobal
