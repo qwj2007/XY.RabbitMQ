@@ -12,7 +12,10 @@ namespace XY.RabbitMQ.Client
     {
         static void Main(string[] args)
         {
-            RabbitMQTest();
+            for (int i = 0; i < 100000; i++)
+            {
+                RabbitMQTest();
+            }
 
             Console.ReadKey();
         }
@@ -37,7 +40,7 @@ namespace XY.RabbitMQ.Client
                 RabbitMQSender<MessageEntity> sender = new RabbitMQSender<MessageEntity>(context2, message);
                 sender.TriggerEventMessage();
 
-                Console.WriteLine(string.Format("发送信息:{0}", message.MessageEntity));
+                Console.WriteLine(string.Format("发送信息:{0}", message.MessageEntity.MessageContent));
             }
             catch (Exception e)
             {

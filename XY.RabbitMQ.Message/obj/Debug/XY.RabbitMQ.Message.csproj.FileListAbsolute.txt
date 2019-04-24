@@ -1,6 +1,6 @@
 E:\XY.RabbitMQ\XY.RabbitMQ.Message\bin\Debug\XY.RabbitMQ.Message.dll
 E:\XY.RabbitMQ\XY.RabbitMQ.Message\bin\Debug\XY.RabbitMQ.Message.pdb
-E:\XY.RabbitMQ\XY.RabbitMQ.Message\obj\Debug\XY.RabbitMQ.Message.csprojAssemblyReference.cache
 E:\XY.RabbitMQ\XY.RabbitMQ.Message\obj\Debug\XY.RabbitMQ.Message.csproj.CoreCompileInputs.cache
 E:\XY.RabbitMQ\XY.RabbitMQ.Message\obj\Debug\XY.RabbitMQ.Message.dll
 E:\XY.RabbitMQ\XY.RabbitMQ.Message\obj\Debug\XY.RabbitMQ.Message.pdb
+E:\XY.RabbitMQ\XY.RabbitMQ.Message\obj\Debug\XY.RabbitMQ.Message.csprojAssemblyReference.cache
