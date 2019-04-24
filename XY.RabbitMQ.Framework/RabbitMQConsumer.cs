@@ -86,9 +86,5 @@ namespace XY.RabbitMQ.Framework
                 throw ex;
             }
         }
-
-
-
-
     }
 }
