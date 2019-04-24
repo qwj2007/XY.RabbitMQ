@@ -1,0 +1,13 @@
+E:\XY.RabbitMQ\XY.RabbitMQ.Server\bin\Debug\XY.RabbitMQ.Server.exe.config
+E:\XY.RabbitMQ\XY.RabbitMQ.Server\bin\Debug\XY.RabbitMQ.Server.exe
+E:\XY.RabbitMQ\XY.RabbitMQ.Server\bin\Debug\XY.RabbitMQ.Server.pdb
+E:\XY.RabbitMQ\XY.RabbitMQ.Server\bin\Debug\XY.RabbitMQ.Framework.dll
+E:\XY.RabbitMQ\XY.RabbitMQ.Server\bin\Debug\XY.RabbitMQ.Message.dll
+E:\XY.RabbitMQ\XY.RabbitMQ.Server\bin\Debug\RabbitMQ.Client.dll
+E:\XY.RabbitMQ\XY.RabbitMQ.Server\bin\Debug\XY.RabbitMQ.Framework.pdb
+E:\XY.RabbitMQ\XY.RabbitMQ.Server\bin\Debug\XY.RabbitMQ.Message.pdb
+E:\XY.RabbitMQ\XY.RabbitMQ.Server\obj\Debug\XY.RabbitMQ.Server.csprojAssemblyReference.cache
+E:\XY.RabbitMQ\XY.RabbitMQ.Server\obj\Debug\XY.RabbitMQ.Server.csproj.CoreCompileInputs.cache
+E:\XY.RabbitMQ\XY.RabbitMQ.Server\obj\Debug\XY.RabbitMQ.Server.csproj.CopyComplete
+E:\XY.RabbitMQ\XY.RabbitMQ.Server\obj\Debug\XY.RabbitMQ.Server.exe
+E:\XY.RabbitMQ\XY.RabbitMQ.Server\obj\Debug\XY.RabbitMQ.Server.pdb
