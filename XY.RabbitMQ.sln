@@ -1,0 +1,71 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.572
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "XY.RabbitMQ.Framework", "XY.RabbitMQ.Framework\XY.RabbitMQ.Framework.csproj", "{570C3E8A-5590-4148-B15C-B3416F3AD190}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "XY.RabbitMQ.Demo", "XY.RabbitMQ.Demo", "{14A8D062-A2DB-4D66-9B4E-55B0DFAD644F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "XY.RabbitMQ.Message", "XY.RabbitMQ.Message\XY.RabbitMQ.Message.csproj", "{5F0BF74D-6E5E-4FBF-B5DF-B779C7E68B4B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "XY.RabbitMQ.Client", "XY.RabbitMQ.Client\XY.RabbitMQ.Client.csproj", "{7243FB8C-1C67-46F0-BED7-7E07CAEC3EE4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "XY.RabbitMQ.Server", "XY.RabbitMQ.Server\XY.RabbitMQ.Server.csproj", "{651BFE8D-DA29-49F0-80B3-539598C47E3A}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{570C3E8A-5590-4148-B15C-B3416F3AD190}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{570C3E8A-5590-4148-B15C-B3416F3AD190}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{570C3E8A-5590-4148-B15C-B3416F3AD190}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{570C3E8A-5590-4148-B15C-B3416F3AD190}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5F0BF74D-6E5E-4FBF-B5DF-B779C7E68B4B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5F0BF74D-6E5E-4FBF-B5DF-B779C7E68B4B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5F0BF74D-6E5E-4FBF-B5DF-B779C7E68B4B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5F0BF74D-6E5E-4FBF-B5DF-B779C7E68B4B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7243FB8C-1C67-46F0-BED7-7E07CAEC3EE4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7243FB8C-1C67-46F0-BED7-7E07CAEC3EE4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7243FB8C-1C67-46F0-BED7-7E07CAEC3EE4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7243FB8C-1C67-46F0-BED7-7E07CAEC3EE4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{651BFE8D-DA29-49F0-80B3-539598C47E3A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{651BFE8D-DA29-49F0-80B3-539598C47E3A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{651BFE8D-DA29-49F0-80B3-539598C47E3A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{651BFE8D-DA29-49F0-80B3-539598C47E3A}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{5F0BF74D-6E5E-4FBF-B5DF-B779C7E68B4B} = {14A8D062-A2DB-4D66-9B4E-55B0DFAD644F}
+		{7243FB8C-1C67-46F0-BED7-7E07CAEC3EE4} = {14A8D062-A2DB-4D66-9B4E-55B0DFAD644F}
+		{651BFE8D-DA29-49F0-80B3-539598C47E3A} = {14A8D062-A2DB-4D66-9B4E-55B0DFAD644F}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {72CEA331-E5E8-4C0B-811A-3E6D1A91D7B7}
+	EndGlobalSection
+	GlobalSection(TeamFoundationVersionControl) = preSolution
+		SccNumberOfProjects = 5
+		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccTeamFoundationServer = https://qwj2007.visualstudio.com/
+		SccLocalPath0 = .
+		SccProjectUniqueName1 = XY.RabbitMQ.Client\\XY.RabbitMQ.Client.csproj
+		SccProjectTopLevelParentUniqueName1 = XY.RabbitMQ.sln
+		SccProjectName1 = XY.RabbitMQ.Client
+		SccLocalPath1 = XY.RabbitMQ.Client
+		SccProjectUniqueName2 = XY.RabbitMQ.Framework\\XY.RabbitMQ.Framework.csproj
+		SccProjectName2 = XY.RabbitMQ.Framework
+		SccLocalPath2 = XY.RabbitMQ.Framework
+		SccProjectUniqueName3 = XY.RabbitMQ.Message\\XY.RabbitMQ.Message.csproj
+		SccProjectTopLevelParentUniqueName3 = XY.RabbitMQ.sln
+		SccProjectName3 = XY.RabbitMQ.Message
+		SccLocalPath3 = XY.RabbitMQ.Message
+		SccProjectUniqueName4 = XY.RabbitMQ.Server\\XY.RabbitMQ.Server.csproj
+		SccProjectTopLevelParentUniqueName4 = XY.RabbitMQ.sln
+		SccProjectName4 = XY.RabbitMQ.Server
+		SccLocalPath4 = XY.RabbitMQ.Server
+	EndGlobalSection
+EndGlobal
