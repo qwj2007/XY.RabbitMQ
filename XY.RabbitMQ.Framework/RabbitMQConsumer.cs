@@ -38,10 +38,10 @@ namespace XY.RabbitMQ.Framework
                 lock(this)
                 {
                     Context.ListenConnection = RabbitMQClientFactory.CreateConnectionForSumer();
+                 
                     //获取通道
                     Context.ListenChannel = RabbitMQClientFactory.CreateModel(Context.ListenConnection);
-
-
+                    
                     //创建事件驱动的消费者模型
                     //QueueingBasicConsumer这个是队列的消费者
                     var consumer = new EventingBasicConsumer(Context.ListenChannel);

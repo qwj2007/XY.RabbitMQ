@@ -66,8 +66,9 @@ namespace XY.RabbitMQ.Framework
                 //心跳超时时间，如果是单节点，不设置这个值是没有问题的
                 //但如果连接的是类似HAProxy虚拟节点的时候就会出现TCP被断开的可能性
                 RequestedHeartbeat = heartbeat,
-                VirtualHost = mqConfigCom.MqVirtualHost
-            };
+                VirtualHost = mqConfigCom.MqVirtualHost,
+                AutomaticRecoveryEnabled = true   //设置端口后自动恢复连接属性即可
+        };
 
             return factory.CreateConnection();//创建连接对你
         }

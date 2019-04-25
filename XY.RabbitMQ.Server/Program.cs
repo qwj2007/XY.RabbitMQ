@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Newtonsoft.Json;
 using XY.RabbitMQ.Framework;
 using XY.RabbitMQ.Message;
 
@@ -27,14 +28,14 @@ namespace XY.RabbitMQ.Server
             LogLocation.Log = new LogInfo();
             RabbitMQClientContext context = new RabbitMQClientContext()
             {
-                ListenQueueName = "SendQueueName"
+                ListenQueueName = "DirectQueue"
             };
 
             RabbitMQConsumer<MessageEntity> consumer = new RabbitMQConsumer<MessageEntity>(context, new EventMessage<MessageEntity>())
             {
                 ActionMessage = b =>
                 {
-                    Console.WriteLine(b.MessageEntity.MessageContent);
+                    Console.WriteLine(JsonConvert.SerializeObject(b.MessageEntity));
                     b.IsOperationOk = true;
                 }
             };

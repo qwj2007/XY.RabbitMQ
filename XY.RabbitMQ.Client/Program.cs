@@ -12,34 +12,47 @@ namespace XY.RabbitMQ.Client
     {
         static void Main(string[] args)
         {
+            string content = "";
+            do
+            {
+                content = Console.ReadLine();
+                RabbitMQTest(content);
+            } while (content != "q");
 
-            RabbitMQTest();
-            Console.ReadKey();
         }
 
         //测试RabbitMQ
-        static void RabbitMQTest()
+        static void RabbitMQTest(string content)
         {
             //持久化的Exchange、持久化的消息、持久化的队列
-            RabbitMQClientContext context = new RabbitMQClientContext() { SendQueueName = "SendQueueName", SendExchange = "amq.fanout" };
+            //RabbitMQClientContext context = new RabbitMQClientContext() { SendQueueName = "SendQueueName11", SendExchange = "TEST" ,RoutType = MQRouteType.DirectExchange};
             //持久化的Exchange、持久化的消息、非持久化的队列
-            RabbitMQClientContext context2 = new RabbitMQClientContext() { SendQueueName = "SendQueueName", SendExchange = "amq.fanout" };
+            RabbitMQClientContext context2 = new RabbitMQClientContext()
+            {
+                SendQueueName = "DirectQueue",
+                SendExchange = "DirectQueue",
+                RoutType = MqRouteType.DirectExchange,
+                RoutKey = "DirectQueue"
+            };
 
             IEventMessage<MessageEntity> message = new EventMessage<MessageEntity>()
             {
                 IsOperationOk = false,
-                MessageEntity = new MessageEntity() { MessageID = 1, MessageContent = "测试消息队列3" },
+                MessageEntity = new MessageEntity() { MessageID = 1, MessageContent = content },
                 deliveryMode = 2
             };
 
             try
             {
                 RabbitMQSender<MessageEntity> sender = new RabbitMQSender<MessageEntity>(context2, message);
-                for (int i = 0; i < 10000; i++)
-                {
-                    sender.TriggerEventMessage();
-                    Console.WriteLine(string.Format("发送信息:{0}", message.MessageEntity.MessageContent));
-                }
+                //for (int i = 0; i < 10000; i++)
+                //{
+                Console.WriteLine(string.Format("发送信息:{0}", message.MessageEntity.MessageContent));
+                sender.TriggerEventMessage();
+                //}
+
+
+
             }
             catch (Exception e)
             {

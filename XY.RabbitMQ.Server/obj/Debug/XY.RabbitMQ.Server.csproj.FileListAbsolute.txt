@@ -11,3 +11,5 @@ E:\XY.RabbitMQ\XY.RabbitMQ.Server\obj\Debug\XY.RabbitMQ.Server.csproj.CoreCompil
 E:\XY.RabbitMQ\XY.RabbitMQ.Server\obj\Debug\XY.RabbitMQ.Server.csproj.CopyComplete
 E:\XY.RabbitMQ\XY.RabbitMQ.Server\obj\Debug\XY.RabbitMQ.Server.exe
 E:\XY.RabbitMQ\XY.RabbitMQ.Server\obj\Debug\XY.RabbitMQ.Server.pdb
+E:\XY.RabbitMQ\XY.RabbitMQ.Server\bin\Debug\Newtonsoft.Json.dll
+E:\XY.RabbitMQ\XY.RabbitMQ.Server\bin\Debug\Newtonsoft.Json.xml
