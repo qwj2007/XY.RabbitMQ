@@ -6,3 +6,4 @@ E:\XY.RabbitMQ\XY.RabbitMQ.Message\obj\Debug\XY.RabbitMQ.Message.pdb
 E:\XY.RabbitMQ\XY.RabbitMQ.Message\bin\Debug\Newtonsoft.Json.dll
 E:\XY.RabbitMQ\XY.RabbitMQ.Message\bin\Debug\Newtonsoft.Json.xml
 E:\XY.RabbitMQ\XY.RabbitMQ.Message\obj\Debug\XY.RabbitMQ.Message.csproj.CopyComplete
+E:\XY.RabbitMQ\XY.RabbitMQ.Message\obj\Debug\XY.RabbitMQ.Message.csprojAssemblyReference.cache

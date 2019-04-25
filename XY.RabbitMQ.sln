@@ -13,6 +13,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "XY.RabbitMQ.Client", "XY.Ra
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "XY.RabbitMQ.Server", "XY.RabbitMQ.Server\XY.RabbitMQ.Server.csproj", "{651BFE8D-DA29-49F0-80B3-539598C47E3A}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CoreMQ", "CoreMQ\CoreMQ.csproj", "{F52E1035-11D7-4B09-A0EE-C5F9744F1231}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -35,6 +37,10 @@ Global
 		{651BFE8D-DA29-49F0-80B3-539598C47E3A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{651BFE8D-DA29-49F0-80B3-539598C47E3A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{651BFE8D-DA29-49F0-80B3-539598C47E3A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F52E1035-11D7-4B09-A0EE-C5F9744F1231}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F52E1035-11D7-4B09-A0EE-C5F9744F1231}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F52E1035-11D7-4B09-A0EE-C5F9744F1231}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F52E1035-11D7-4B09-A0EE-C5F9744F1231}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
