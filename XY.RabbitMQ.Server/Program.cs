@@ -38,7 +38,6 @@ namespace XY.RabbitMQ.Server
                     b.IsOperationOk = true;
                 }
             };
-
             consumer.OnListening();
             //多个消费者，共用一个连接，使用不同的Channel
             //consumer.OnListening();

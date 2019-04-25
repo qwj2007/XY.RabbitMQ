@@ -12,11 +12,8 @@ namespace XY.RabbitMQ.Client
     {
         static void Main(string[] args)
         {
-            for (int i = 0; i < 100000; i++)
-            {
-                RabbitMQTest();
-            }
 
+            RabbitMQTest();
             Console.ReadKey();
         }
 
@@ -38,9 +35,11 @@ namespace XY.RabbitMQ.Client
             try
             {
                 RabbitMQSender<MessageEntity> sender = new RabbitMQSender<MessageEntity>(context2, message);
-                sender.TriggerEventMessage();
-
-                Console.WriteLine(string.Format("发送信息:{0}", message.MessageEntity.MessageContent));
+                for (int i = 0; i < 10000; i++)
+                {
+                    sender.TriggerEventMessage();
+                    Console.WriteLine(string.Format("发送信息:{0}", message.MessageEntity.MessageContent));
+                }
             }
             catch (Exception e)
             {

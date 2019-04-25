@@ -46,7 +46,14 @@ namespace XY.RabbitMQ.Framework
                     //QueueingBasicConsumer这个是队列的消费者
                     var consumer = new EventingBasicConsumer(Context.ListenChannel);
                     consumer.Received += Consumer_Received;
+                    //即在非自动确认消息的前提下，如果一定数目的消息（通过基于consume或者channel设置Qos的值）未被确认前，不进行消费新的消息。
+                    // void BasicQos(uint prefetchSize, ushort prefetchCount, bool global);
+                    /*prefetchSize：0 
+                      prefetchCount：会告诉RabbitMQ不要同时给一个消费者推送多于N个消息，即一旦有N个消息还没有ack，则该consumer将block掉，直到有消息ack
+                      global：true\false 是否将上面设置应用于channel，简单点说，就是上面限制是channel级别的还是consumer级别,如果是false就是当前channel
+                        */
                     Context.ListenChannel.BasicQos(0, 1, false);
+                    //消息确认, 首先将autoAck自动确认关闭，等我们的任务执行完成之后，手动的去确认
                     Context.ListenChannel.BasicConsume(Context.ListenQueueName, false, consumer);
                 }
             }
