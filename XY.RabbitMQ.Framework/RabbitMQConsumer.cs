@@ -37,14 +37,16 @@ namespace XY.RabbitMQ.Framework
                 //获取连接
                 lock(this)
                 {
+                  
                     //Context.ListenConnection = RabbitMQClientFactory.CreateConnectionForSumer();
                     Context.ListenConnection = RabbitMQClientFactory.CreateConnection(Context.MqConfigDom);
                     //获取通道
                     Context.ListenChannel = RabbitMQClientFactory.CreateModel(Context.ListenConnection);
+                    //获取消息队列中有多少数据。
+                    int count = Convert.ToInt32(Context.ListenChannel.MessageCount(Context.ListenQueueName));
                     //创建事件驱动的消费者模型
                     //QueueingBasicConsumer这个是队列的消费者
                     var consumer = new EventingBasicConsumer(Context.ListenChannel);
-
                     consumer.Received += Consumer_Received;
 
                     //即在非自动确认消息的前提下，如果一定数目的消息（通过基于consume或者channel设置Qos的值）未被确认前，不进行消费新的消息。
@@ -73,8 +75,10 @@ namespace XY.RabbitMQ.Framework
         {
             try
             {
-                var result = Message.BuildEventMessageResult(e.Body);
+                
+                
 
+                var result = Message.BuildEventMessageResult(e.Body);
                 if (ActionMessage != null)
                     ActionMessage(result);//触发外部监听事件，处理此消息
 

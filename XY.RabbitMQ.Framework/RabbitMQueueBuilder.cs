@@ -23,6 +23,7 @@ namespace XY.RabbitMQ.Framework
         {
             var channel = _conn.CreateModel();
             channel.QueueDeclare(queueName, durable, exclusive, autoDelete, args);
+            
             /*事务开启
             channel.TxSelect()
             channel.TxCommit();

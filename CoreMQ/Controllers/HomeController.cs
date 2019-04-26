@@ -51,7 +51,7 @@ namespace CoreMQ.Controllers
 
             IEventMessage<MessageEntity> message = new EventMessage<MessageEntity>()
             {
-                IsOperationOk = false,
+                IsOperationOk = false,//消息队列是否处理
                 MessageEntity = new MessageEntity() {MessageContent = content },
                 deliveryMode = 2
             };

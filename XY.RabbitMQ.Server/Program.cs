@@ -37,7 +37,7 @@ namespace XY.RabbitMQ.Server
                     MqVirtualHost = "/"
                 }
             };
-
+          
             RabbitMQConsumer<MessageEntity> consumer = new RabbitMQConsumer<MessageEntity>(context, new EventMessage<MessageEntity>())
             {
                 ActionMessage = b =>
