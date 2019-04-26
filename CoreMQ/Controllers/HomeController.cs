@@ -39,13 +39,20 @@ namespace CoreMQ.Controllers
                 SendQueueName = "DirectQueue",
                 SendExchange = "DirectQueue",
                 RoutType = MqRouteType.DirectExchange,
-                RoutKey = "DirectQueue"
+                RoutKey = "DirectQueue",
+                MqConfigDom = new MqConfigDom()
+                {
+                    MqHost = "127.0.0.1",
+                    MqUserName = "admin",
+                    MqPassword = "admin",
+                    MqVirtualHost = "/"
+                }
             };
 
             IEventMessage<MessageEntity> message = new EventMessage<MessageEntity>()
             {
                 IsOperationOk = false,
-                MessageEntity = new MessageEntity() { MessageID = 1, MessageContent = content },
+                MessageEntity = new MessageEntity() {MessageContent = content },
                 deliveryMode = 2
             };
 
@@ -55,9 +62,9 @@ namespace CoreMQ.Controllers
                 Console.WriteLine(string.Format("发送信息:{0}", message.MessageEntity.MessageContent));
                 sender.TriggerEventMessage();
             }
-            catch (Exception e)
+            catch (Exception ex)
             {
-                Console.WriteLine(string.Format("发送信息失败:{0}", e.Message));
+                Console.WriteLine(string.Format("发送信息失败:{0}", ex.Message));
             }
         }
 

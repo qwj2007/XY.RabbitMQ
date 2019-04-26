@@ -13,3 +13,6 @@ E:\XY.RabbitMQ\XY.RabbitMQ.Client\obj\Debug\XY.RabbitMQ.Client.exe
 E:\XY.RabbitMQ\XY.RabbitMQ.Client\obj\Debug\XY.RabbitMQ.Client.pdb
 E:\XY.RabbitMQ\XY.RabbitMQ.Client\bin\Debug\Newtonsoft.Json.dll
 E:\XY.RabbitMQ\XY.RabbitMQ.Client\bin\Debug\Newtonsoft.Json.xml
+E:\XY.RabbitMQ\XY.RabbitMQ.Client\bin\Debug\Microsoft.Diagnostics.Tracing.EventSource.dll
+E:\XY.RabbitMQ\XY.RabbitMQ.Client\bin\Debug\Microsoft.Diagnostics.Tracing.EventSource.xml
+E:\XY.RabbitMQ\XY.RabbitMQ.Client\bin\Debug\RabbitMQ.Client.xml

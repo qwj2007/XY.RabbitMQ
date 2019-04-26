@@ -35,9 +35,13 @@ namespace XY.RabbitMQ.Framework
             return _conn;
         }
 
-        private static IConnection CreateConnection()
+        public static IConnection CreateConnection(MqConfigDom mqConfigCom = null)
         {
-            var mqConfigCom = MqConfigComFactory.CreateConfigDomInstance(); //获取MQ的配置
+            if (mqConfigCom == null)
+            {
+                mqConfigCom = MqConfigComFactory.CreateConfigDomInstance(); //获取MQ的配置
+            }
+
             const ushort heartbeat = 60;
             var factory = new ConnectionFactory()
             {
@@ -48,30 +52,32 @@ namespace XY.RabbitMQ.Framework
                 //但如果连接的是类似HAProxy虚拟节点的时候就会出现TCP被断开的可能性
                 RequestedHeartbeat = heartbeat,
                 AutomaticRecoveryEnabled = true, //自动重连
+                Port = AmqpTcpEndpoint.UseDefaultPort,
                 VirtualHost = mqConfigCom.MqVirtualHost
             };
 
             return factory.CreateConnection();//创建连接对你
         }
 
-        public static IConnection CreateConnectionForSend()
-        {
-            var mqConfigCom = MqConfigComFactory.CreateConfigDomInstance(); //获取MQ的配置
-            const ushort heartbeat = 60;
-            var factory = new ConnectionFactory()
-            {
-                HostName = mqConfigCom.MqHost,
-                UserName = mqConfigCom.MqUserName,
-                Password = mqConfigCom.MqPassword,
-                //心跳超时时间，如果是单节点，不设置这个值是没有问题的
-                //但如果连接的是类似HAProxy虚拟节点的时候就会出现TCP被断开的可能性
-                RequestedHeartbeat = heartbeat,
-                VirtualHost = mqConfigCom.MqVirtualHost,
-                AutomaticRecoveryEnabled = true   //设置端口后自动恢复连接属性即可
-        };
+        //public static IConnection CreateConnectionForSend()
+        //{
+        //    var mqConfigCom = MqConfigComFactory.CreateConfigDomInstance(); //获取MQ的配置
+        //    const ushort heartbeat = 60;
+        //    var factory = new ConnectionFactory()
+        //    {
+        //        HostName = mqConfigCom.MqHost,
+        //        UserName = mqConfigCom.MqUserName,
+        //        Password = mqConfigCom.MqPassword,
+        //        //心跳超时时间，如果是单节点，不设置这个值是没有问题的
+        //        //但如果连接的是类似HAProxy虚拟节点的时候就会出现TCP被断开的可能性
+        //        RequestedHeartbeat = heartbeat,
+        //        VirtualHost = mqConfigCom.MqVirtualHost,
+        //        AutomaticRecoveryEnabled = true   //设置端口后自动恢复连接属性即可
+        //};
 
-            return factory.CreateConnection();//创建连接对你
-        }
+        //    return factory.CreateConnection();//创建连接对你
+        //}
+
 
 
         public static IModel CreateModel(IConnection connection)

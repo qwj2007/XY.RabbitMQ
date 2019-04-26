@@ -9,7 +9,8 @@ namespace XY.RabbitMQ.Framework
 {
     public class RabbitMQueueBuilder : IDisposable
     {
-        private IConnection _conn = RabbitMQClientFactory.CreateConnectionForSend();
+        //private IConnection _conn = RabbitMQClientFactory.CreateConnectionForSend();
+        private IConnection _conn = RabbitMQClientFactory.CreateConnection();
         /// <summary>
         /// 创建队列
         /// </summary>

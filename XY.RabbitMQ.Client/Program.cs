@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Newtonsoft.Json;
 using XY.RabbitMQ.Framework;
 using XY.RabbitMQ.Message;
 
@@ -32,13 +33,20 @@ namespace XY.RabbitMQ.Client
                 SendQueueName = "DirectQueue",
                 SendExchange = "DirectQueue",
                 RoutType = MqRouteType.DirectExchange,
-                RoutKey = "DirectQueue"
+                RoutKey = "DirectQueue",
+                MqConfigDom =new MqConfigDom()
+                {
+                    MqHost = "127.0.0.1",
+                    MqUserName = "admin",
+                    MqPassword = "admin",
+                    MqVirtualHost = "/"
+                }
             };
 
             IEventMessage<MessageEntity> message = new EventMessage<MessageEntity>()
             {
                 IsOperationOk = false,
-                MessageEntity = new MessageEntity() { MessageID = 1, MessageContent = content },
+                MessageEntity = new MessageEntity() { MessageContent =JsonConvert.SerializeObject(content)  },
                 deliveryMode = 2
             };
 

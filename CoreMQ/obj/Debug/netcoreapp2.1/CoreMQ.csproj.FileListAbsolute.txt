@@ -4,7 +4,6 @@ E:\XY.RabbitMQ\CoreMQ\bin\Debug\netcoreapp2.1\CoreMQ.runtimeconfig.dev.json
 E:\XY.RabbitMQ\CoreMQ\bin\Debug\netcoreapp2.1\CoreMQ.dll
 E:\XY.RabbitMQ\CoreMQ\bin\Debug\netcoreapp2.1\XY.RabbitMQ.Framework.dll
 E:\XY.RabbitMQ\CoreMQ\bin\Debug\netcoreapp2.1\XY.RabbitMQ.Message.dll
-E:\XY.RabbitMQ\CoreMQ\bin\Debug\netcoreapp2.1\RabbitMQ.Client.dll
 E:\XY.RabbitMQ\CoreMQ\bin\Debug\netcoreapp2.1\XY.RabbitMQ.Framework.pdb
 E:\XY.RabbitMQ\CoreMQ\bin\Debug\netcoreapp2.1\XY.RabbitMQ.Message.pdb
 E:\XY.RabbitMQ\CoreMQ\obj\Debug\netcoreapp2.1\CoreMQ.csprojAssemblyReference.cache

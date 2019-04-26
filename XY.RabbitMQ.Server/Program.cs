@@ -28,7 +28,14 @@ namespace XY.RabbitMQ.Server
             LogLocation.Log = new LogInfo();
             RabbitMQClientContext context = new RabbitMQClientContext()
             {
-                ListenQueueName = "DirectQueue"
+                ListenQueueName = "DirectQueue",
+                MqConfigDom = new MqConfigDom()
+                {
+                    MqHost = "127.0.0.1",
+                    MqUserName = "admin",
+                    MqPassword = "admin",
+                    MqVirtualHost = "/"
+                }
             };
 
             RabbitMQConsumer<MessageEntity> consumer = new RabbitMQConsumer<MessageEntity>(context, new EventMessage<MessageEntity>())

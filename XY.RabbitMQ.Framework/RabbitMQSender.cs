@@ -1,4 +1,5 @@
-﻿using System;
+﻿using RabbitMQ.Client;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -24,15 +25,11 @@ namespace XY.RabbitMQ.Framework
         //可以在创建队列的时候设置此队列是持久化的，但是队列中的消息要在我们发送某个消息的时候打上需要持久化的状态标记。
         public void TriggerEventMessage()
         {
-            //if (Context.SendConnection == null)
-            //{
-            Context.SendConnection = RabbitMQClientFactory.CreateConnectionForSend();//获取连接
-            //}
+            //Context.SendConnection = RabbitMQClientFactory.CreateConnectionForSend();//获取连接
+            Context.SendConnection = RabbitMQClientFactory.CreateConnection(Context.MqConfigDom);//获取连接
             using (Context.SendConnection)
             {
                 //获取发送通道
-                //if (Context.SendChannel == null)
-                //{
                 Context.SendChannel = RabbitMQClientFactory.CreateModel(Context.SendConnection);
                 //声明消息队列
                 Context.SendChannel.QueueDeclare(Context.SendQueueName, true, false, false, null);
@@ -40,8 +37,6 @@ namespace XY.RabbitMQ.Framework
                 Context.SendChannel.ExchangeDeclare(Context.SendExchange, Context.RoutType, true, false, null);
                 //绑定
                 Context.SendChannel.QueueBind(Context.SendQueueName, Context.SendExchange, Context.RoutKey);
-                //}
-
                 using (Context.SendChannel)
                 {
                     //序列化消息器
@@ -51,12 +46,10 @@ namespace XY.RabbitMQ.Framework
                     properties.DeliveryMode = Message.deliveryMode;
                     //推送消息
                     byte[] sMessage = messageSerializer.SerializerBytes(Message);
-                    //for (int i = 0; i < 10000; i++)
-                    //{
-                        Console.WriteLine(string.Format("发送信息:{0}", Newtonsoft.Json.JsonConvert.SerializeObject(Message.MessageEntity)));
-                        Context.SendChannel.BasicPublish(Context.SendExchange, Context.SendQueueName, properties,
-                            sMessage);
-                    //}
+                    Console.WriteLine(string.Format("发送信息:{0}", Newtonsoft.Json.JsonConvert.SerializeObject(Message.MessageEntity)));
+                    Context.SendChannel.BasicPublish(Context.SendExchange, Context.SendQueueName, properties,
+                        sMessage);
+
                 }
             }
         }

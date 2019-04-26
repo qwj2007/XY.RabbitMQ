@@ -9,7 +9,7 @@ namespace XY.RabbitMQ.Message
     [Serializable]
     public class MessageEntity
     {
-        public int MessageID { get; set; }
+        //  public int MessageID { get; set; }
         public string MessageContent { get; set; }
     }
 }

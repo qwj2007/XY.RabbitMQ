@@ -1694,6 +1694,8 @@
       "type": "package",
       "path": "rabbitmq.client/5.1.0",
       "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
         "lib/net451/RabbitMQ.Client.dll",
         "lib/net451/RabbitMQ.Client.xml",
         "lib/netstandard1.5/RabbitMQ.Client.dll",

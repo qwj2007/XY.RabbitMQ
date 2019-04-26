@@ -52,6 +52,11 @@ namespace XY.RabbitMQ.Framework
         /// 路由键
         /// </summary>
         public string RoutKey { get; set; }
+
+        /// <summary>
+        /// RabbitMq的配置
+        /// </summary>
+        public MqConfigDom MqConfigDom { get; set; }
     }
     /// <summary>
     /// RabbitMQ路由类型
