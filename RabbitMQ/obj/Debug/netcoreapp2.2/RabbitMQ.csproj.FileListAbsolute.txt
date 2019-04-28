@@ -1,0 +1,14 @@
+E:\XY.RabbitMQ\RabbitMQ\bin\Debug\netcoreapp2.2\RabbitMQ.deps.json
+E:\XY.RabbitMQ\RabbitMQ\bin\Debug\netcoreapp2.2\RabbitMQ.runtimeconfig.json
+E:\XY.RabbitMQ\RabbitMQ\bin\Debug\netcoreapp2.2\RabbitMQ.runtimeconfig.dev.json
+E:\XY.RabbitMQ\RabbitMQ\bin\Debug\netcoreapp2.2\RabbitMQ.dll
+E:\XY.RabbitMQ\RabbitMQ\bin\Debug\netcoreapp2.2\RabbitMQ.pdb
+E:\XY.RabbitMQ\RabbitMQ\bin\Debug\netcoreapp2.2\NetCore.Common.dll
+E:\XY.RabbitMQ\RabbitMQ\bin\Debug\netcoreapp2.2\NetCore.Common.pdb
+E:\XY.RabbitMQ\RabbitMQ\obj\Debug\netcoreapp2.2\RabbitMQ.csprojAssemblyReference.cache
+E:\XY.RabbitMQ\RabbitMQ\obj\Debug\netcoreapp2.2\RabbitMQ.csproj.CoreCompileInputs.cache
+E:\XY.RabbitMQ\RabbitMQ\obj\Debug\netcoreapp2.2\RabbitMQ.AssemblyInfoInputs.cache
+E:\XY.RabbitMQ\RabbitMQ\obj\Debug\netcoreapp2.2\RabbitMQ.AssemblyInfo.cs
+E:\XY.RabbitMQ\RabbitMQ\obj\Debug\netcoreapp2.2\RabbitMQ.csproj.CopyComplete
+E:\XY.RabbitMQ\RabbitMQ\obj\Debug\netcoreapp2.2\RabbitMQ.dll
+E:\XY.RabbitMQ\RabbitMQ\obj\Debug\netcoreapp2.2\RabbitMQ.pdb

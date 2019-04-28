@@ -1,0 +1,8 @@
+E:\XY.RabbitMQ\NetCore.Common\bin\Debug\netcoreapp2.2\NetCore.Common.deps.json
+E:\XY.RabbitMQ\NetCore.Common\bin\Debug\netcoreapp2.2\NetCore.Common.dll
+E:\XY.RabbitMQ\NetCore.Common\bin\Debug\netcoreapp2.2\NetCore.Common.pdb
+E:\XY.RabbitMQ\NetCore.Common\obj\Debug\netcoreapp2.2\NetCore.Common.csproj.CoreCompileInputs.cache
+E:\XY.RabbitMQ\NetCore.Common\obj\Debug\netcoreapp2.2\NetCore.Common.AssemblyInfoInputs.cache
+E:\XY.RabbitMQ\NetCore.Common\obj\Debug\netcoreapp2.2\NetCore.Common.AssemblyInfo.cs
+E:\XY.RabbitMQ\NetCore.Common\obj\Debug\netcoreapp2.2\NetCore.Common.dll
+E:\XY.RabbitMQ\NetCore.Common\obj\Debug\netcoreapp2.2\NetCore.Common.pdb

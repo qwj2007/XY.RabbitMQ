@@ -3,33 +3,42 @@ using RabbitMQ.Client.Events;
 using System;
 using System.Collections.Generic;
 using System.Text;
+using Newtonsoft.Json;
 
 namespace RabbitMQ
 {
-    public class RabbitMQHelper
+    public class RabbitMQHelper : IRabbitMQHelper
     {
-        ConnectionFactory connectionFactory;
-        IConnection connection;
-        IModel channel;
-        string exchangeName;
+        /// <summary>
+        /// 建立连接
+        /// </summary>
+        public IConnection connection { get; set; }
+        /// <summary>
+        /// 通道
+        /// </summary>
+        public IModel channel { get; set; }
 
-        public RabbitMQHelper(string changeName= "fanout_mq") {
-            this.exchangeName = changeName;
-            //创建连接工厂
-            connectionFactory = new ConnectionFactory
-            {
-                HostName = "127.0.0.1",
-                UserName = "admin",
-                Password = "admin"
-            };
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="queryConfigKey">配置键</param>
+        public RabbitMQHelper(string queryConfigKey = "RabbitMQConfig")
+        {
             //创建连接
-            connection = connectionFactory.CreateConnection();
+            connection = RabbitMQClientFactory.CreateConnection(queryConfigKey);
             //创建通道
             channel = connection.CreateModel();
+            channel.QueueDeclare(RabbitMQClientFactory.rabbitmq.QueueName, true, false, false, null);
             //声明交换机
-            channel.ExchangeDeclare(exchangeName, ExchangeType.Topic);
-            
+            channel.ExchangeDeclare(RabbitMQClientFactory.rabbitmq.ExchangeName, RabbitMQClientFactory.rabbitmq.RoutType, true, false, null);
+            //交换机和消息队列绑定
+            channel.QueueBind(RabbitMQClientFactory.rabbitmq.QueueName, RabbitMQClientFactory.rabbitmq.ExchangeName, RabbitMQClientFactory.rabbitmq.RoutKey);
         }
+
+        public RabbitMQHelper()
+        {
+        }
+        
 
         /// <summary>
         /// 发送消息
@@ -37,18 +46,56 @@ namespace RabbitMQ
         /// <typeparam name="T"></typeparam>
         /// <param name="queName"></param>
         /// <param name="msg"></param>
-        public void SendMsg<T>(string queName,T msg)where T:class
+        public void SendMsg<T>(T msg) where T : class
         {
-            //声明一个队列
-            channel.QueueDeclare(queName, true, false, false, null);
-            //绑定队列，交换机，路由键
-            channel.QueueBind(queName, exchangeName, queName);
-
             var basicProperties = channel.CreateBasicProperties();
             //1：非持久化 2：可持久化
             basicProperties.DeliveryMode = 2;
-            var payload = Encoding.UTF8.GetBytes("我发出的消息");
-            var address = new PublicationAddress(ExchangeType.Direct, exchangeName, queName);
+            var payload = Encoding.UTF8.GetBytes(JsonConvert.SerializeObject(msg));
+            var address = new PublicationAddress(RabbitMQClientFactory.rabbitmq.RoutType, RabbitMQClientFactory.rabbitmq.ExchangeName, RabbitMQClientFactory.rabbitmq.RoutKey);
+            channel.BasicPublish(address, basicProperties, payload);
+        }
+
+        public void SendMsg<T>(string queName, T msg) where T : class
+        {
+            var basicProperties = channel.CreateBasicProperties();
+            //1：非持久化 2：可持久化
+            basicProperties.DeliveryMode = 2;
+            var payload = Encoding.UTF8.GetBytes(JsonConvert.SerializeObject(msg));
+            var address = new PublicationAddress(RabbitMQClientFactory.rabbitmq.RoutType, RabbitMQClientFactory.rabbitmq.ExchangeName, queName);
+            channel.BasicPublish(address, basicProperties, payload);
+        }
+
+        public void SendMsg<T>(string queName, string exchangName, string routType, T msg) where T : class
+        {
+            var basicProperties = channel.CreateBasicProperties();
+            //1：非持久化 2：可持久化
+            basicProperties.DeliveryMode = 2;
+            var payload = Encoding.UTF8.GetBytes(JsonConvert.SerializeObject(msg));
+            var address = new PublicationAddress(routType, exchangName, queName);
+            channel.BasicPublish(address, basicProperties, payload);
+        }
+
+        
+
+
+        public void SendMsg<T>(RabbitMq rabbitMq, T msg)
+        {
+            //创建连接
+            IConnection connection = RabbitMQClientFactory.CreateConnection(rabbitMq);
+            //创建通道
+            IModel channel = connection.CreateModel();
+            //申明队列
+            channel.QueueDeclare(rabbitMq.QueueName, true, false, false, null);
+            //声明交换机
+            channel.ExchangeDeclare(rabbitMq.ExchangeName, rabbitMq.RoutType, true, false, null);
+            //交换机和消息队列绑定
+            channel.QueueBind(rabbitMq.QueueName, rabbitMq.ExchangeName, rabbitMq.RoutKey, null);
+            var basicProperties = channel.CreateBasicProperties();
+            //1：非持久化 2：可持久化
+            basicProperties.DeliveryMode = 2;
+            var payload = Encoding.UTF8.GetBytes(JsonConvert.SerializeObject(msg));
+            var address = new PublicationAddress(rabbitMq.RoutType, rabbitMq.ExchangeName, rabbitMq.RoutKey);
             channel.BasicPublish(address, basicProperties, payload);
         }
 
@@ -57,7 +104,7 @@ namespace RabbitMQ
         /// </summary>
         /// <param name="queName"></param>
         /// <param name="received"></param>
-        public void Receive(string queName,Action<string> received)
+        public void Receive(string queName, Action<string> received)
         {
             //事件基本消费者
             EventingBasicConsumer consumer = new EventingBasicConsumer(channel);
@@ -67,8 +114,8 @@ namespace RabbitMQ
             {
                 string message = Encoding.UTF8.GetString(ea.Body);
                 received(message);
-               
-               // channel. BasicReject(ea.DeliveryTag, true);
+
+                // channel. BasicReject(ea.DeliveryTag, true);
                 //确认该消息已被消费
                 channel.BasicAck(ea.DeliveryTag, false);
             };
@@ -81,7 +128,7 @@ namespace RabbitMQ
             channel.BasicQos(0, 1, false);
             //启动消费者 设置为手动应答消息
             channel.BasicConsume(queName, false, consumer);
-            
+
         }
     }
 }

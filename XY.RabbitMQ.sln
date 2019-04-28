@@ -17,7 +17,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CoreMQ", "CoreMQ\CoreMQ.csp
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RabbitMQ", "RabbitMQ\RabbitMQ.csproj", "{DD7D002C-760E-4358-8B2C-1AB3BE3CA4C6}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NetCore.Common", "NetCore.Common\NetCore.Common.csproj", "{8CDC66F0-F16B-480A-A464-2A269B92DDBD}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NetCore.Common", "NetCore.Common\NetCore.Common.csproj", "{8CDC66F0-F16B-480A-A464-2A269B92DDBD}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Core.Common", "Core.Common", "{665FDC33-A5A2-45D2-953A-7F3D27BE0101}"
 EndProject

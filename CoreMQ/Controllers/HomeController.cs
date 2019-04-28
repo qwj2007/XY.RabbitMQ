@@ -1,12 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Diagnostics;
-using System.Linq;
-using System.Threading.Tasks;
+﻿using System.Diagnostics;
 using Microsoft.AspNetCore.Mvc;
 using CoreMQ.Models;
-using XY.RabbitMQ.Framework;
-using XY.RabbitMQ.Message;
+using Microsoft.AspNetCore.Http;
+using Newtonsoft.Json;
+using RabbitMQ;
 
 namespace CoreMQ.Controllers
 {
@@ -31,41 +28,90 @@ namespace CoreMQ.Controllers
 
         public void RabbitMQTest(string content)
         {
+            #region MQ第一种写法
+
+            RabbitMQHelper mq = new RabbitMQHelper("RabbitMQConfig");
+            mq.SendMsg("卧槽卧槽卧槽");
+
+            #endregion
+
+
+            #region MQ第二种写法
+
+            //RabbitMQHelper mqs = new RabbitMQHelper();
+            //RabbitMq mq = new RabbitMq();
+            //mq.ExchangeName = "amq.direct";
+            //mq.QueueName = "QueueTest";
+            //mq.RoutKey = "QueueTest";
+            //mq.RoutType = "direct";
+            //mq.MqConfig = new MqConfigDom()
+            //{
+            //    MqHost = "127.0.0.1",
+            //    MqPassword = "admin",
+            //    MqUserName = "admin",
+            //    MqVirtualHost = "/"
+            //};
+            //mqs.SendMsg<string>(mq, "测试mQQQ");
+
+            #endregion
+
+
+            #region MQ第三种方法
+
             //持久化的Exchange、持久化的消息、持久化的队列
             //RabbitMQClientContext context = new RabbitMQClientContext() { SendQueueName = "SendQueueName11", SendExchange = "TEST" ,RoutType = MQRouteType.DirectExchange};
             //持久化的Exchange、持久化的消息、非持久化的队列
-            RabbitMQClientContext context2 = new RabbitMQClientContext()
-            {
-                SendQueueName = "HELLOQUEUES",
-                SendExchange = "KSHOP",
-                RoutType = MqRouteType.DirectExchange,
-                RoutKey = "BING_KELLO_QUEUE_KEY",
-                MqConfigDom = new MqConfigDom()
-                {
-                    MqHost = "127.0.0.1",
-                    MqUserName = "admin",
-                    MqPassword = "admin",
-                    MqVirtualHost = "/"
-                }
-            };
+            //RabbitMQClientContext context2 = new RabbitMQClientContext()
+            //{
+            //    SendQueueName = "HELLOQUEUES",
+            //    SendExchange = "KSHOP",
+            //    RoutType = MqRouteType.DirectExchange,
+            //    RoutKey = "BING_KELLO_QUEUE_KEY",
+            //    MqConfigDom = new MqConfigDom()
+            //    {
+            //        MqHost = "127.0.0.1",
+            //        MqUserName = "admin",
+            //        MqPassword = "admin",
+            //        MqVirtualHost = "/"
+            //    }
+            //};
 
-            IEventMessage<MessageEntity> message = new EventMessage<MessageEntity>()
-            {
-                IsOperationOk = false,//消息队列是否处理
-                MessageEntity = new MessageEntity() {MessageContent = content },
-                deliveryMode = 2
-            };
+            //IEventMessage<MessageEntity> message = new EventMessage<MessageEntity>()
+            //{
+            //    IsOperationOk = false,//消息队列是否处理
+            //    MessageEntity = new MessageEntity() {MessageContent = content },
+            //    deliveryMode = 2
+            //};
 
-            try
+            //try
+            //{
+            //    RabbitMQSender<MessageEntity> sender = new RabbitMQSender<MessageEntity>(context2, message);
+            //    Console.WriteLine(string.Format("发送信息:{0}", message.MessageEntity.MessageContent));
+            //    sender.TriggerEventMessage();
+            //}
+            //catch (Exception ex)
+            //{
+            //    Console.WriteLine(string.Format("发送信息失败:{0}", ex.Message));
+            //}
+
+            #endregion
+
+
+            #region MQ接收
+
+            mq.Receive("DirectQueue", item =>
             {
-                RabbitMQSender<MessageEntity> sender = new RabbitMQSender<MessageEntity>(context2, message);
-                Console.WriteLine(string.Format("发送信息:{0}", message.MessageEntity.MessageContent));
-                sender.TriggerEventMessage();
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine(string.Format("发送信息失败:{0}", ex.Message));
-            }
+                string msg = JsonConvert.DeserializeObject<string>(item);
+
+                #region 业务逻辑操作
+                
+
+                #endregion
+
+            });
+
+            #endregion
+
         }
 
         public IActionResult Contact()

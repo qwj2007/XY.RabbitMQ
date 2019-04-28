@@ -7,9 +7,9 @@ namespace RabbitMQ
         static void Main(string[] args)
         {
 
-            MQHelperFactory.Default().Receive("EasyNetQ_Default_Error_Queue", item =>
+            MQHelperFactory.Default().Receive("DirectQueue", item =>
             {
-                MQHelperFactory.Default().SendMsg<string>("fanout_queue_default", item);
+                MQHelperFactory.Default().SendMsg<string>("DirectQueue", item);
             });
             Console.ReadKey();
         }
