@@ -38,7 +38,7 @@ namespace RabbitMQ
         public RabbitMQHelper()
         {
         }
-        
+
 
         /// <summary>
         /// 发送消息
@@ -76,7 +76,7 @@ namespace RabbitMQ
             channel.BasicPublish(address, basicProperties, payload);
         }
 
-        
+
 
 
         public void SendMsg<T>(RabbitMq rabbitMq, T msg)
@@ -113,12 +113,13 @@ namespace RabbitMQ
             consumer.Received += (ch, ea) =>
             {
                 string message = Encoding.UTF8.GetString(ea.Body);
-                received(message);
-
+                received?.Invoke(message);
                 // channel. BasicReject(ea.DeliveryTag, true);
                 //确认该消息已被消费
                 channel.BasicAck(ea.DeliveryTag, false);
             };
+
+            //consumer.Received += Consumer_Received;
             //即在非自动确认消息的前提下，如果一定数目的消息（通过基于consume或者channel设置Qos的值）未被确认前，不进行消费新的消息。
             // void BasicQos(uint prefetchSize, ushort prefetchCount, bool global);
             /*prefetchSize：0 
@@ -130,5 +131,15 @@ namespace RabbitMQ
             channel.BasicConsume(queName, false, consumer);
 
         }
+
+        //private void Consumer_Received(object sender, BasicDeliverEventArgs ea)
+        //{
+        //    string message = Encoding.UTF8.GetString(ea.Body);
+        //    received(message);
+
+        //    // channel. BasicReject(ea.DeliveryTag, true);
+        //    //确认该消息已被消费
+        //    channel.BasicAck(ea.DeliveryTag, false);
+        //}
     }
 }

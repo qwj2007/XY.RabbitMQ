@@ -10,3 +10,4 @@ E:\XY.RabbitMQ\XY.RabbitMQ.Message\bin\Debug\RabbitMQ.Client.dll
 E:\XY.RabbitMQ\XY.RabbitMQ.Message\bin\Debug\RabbitMQ.Client.xml
 E:\XY.RabbitMQ\XY.RabbitMQ.Message\bin\Debug\Microsoft.Diagnostics.Tracing.EventSource.dll
 E:\XY.RabbitMQ\XY.RabbitMQ.Message\bin\Debug\Microsoft.Diagnostics.Tracing.EventSource.xml
+E:\XY.RabbitMQ\XY.RabbitMQ.Message\obj\Debug\XY.RabbitMQ.Message.csprojAssemblyReference.cache

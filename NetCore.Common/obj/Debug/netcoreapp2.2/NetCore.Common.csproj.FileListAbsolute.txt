@@ -6,3 +6,4 @@ E:\XY.RabbitMQ\NetCore.Common\obj\Debug\netcoreapp2.2\NetCore.Common.AssemblyInf
 E:\XY.RabbitMQ\NetCore.Common\obj\Debug\netcoreapp2.2\NetCore.Common.AssemblyInfo.cs
 E:\XY.RabbitMQ\NetCore.Common\obj\Debug\netcoreapp2.2\NetCore.Common.dll
 E:\XY.RabbitMQ\NetCore.Common\obj\Debug\netcoreapp2.2\NetCore.Common.pdb
+E:\XY.RabbitMQ\NetCore.Common\obj\Debug\netcoreapp2.2\NetCore.Common.csprojAssemblyReference.cache
