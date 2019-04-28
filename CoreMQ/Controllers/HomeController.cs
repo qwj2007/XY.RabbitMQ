@@ -36,10 +36,10 @@ namespace CoreMQ.Controllers
             //持久化的Exchange、持久化的消息、非持久化的队列
             RabbitMQClientContext context2 = new RabbitMQClientContext()
             {
-                SendQueueName = "DirectQueue",
-                SendExchange = "DirectQueue",
+                SendQueueName = "HELLOQUEUES",
+                SendExchange = "KSHOP",
                 RoutType = MqRouteType.DirectExchange,
-                RoutKey = "DirectQueue",
+                RoutKey = "BING_KELLO_QUEUE_KEY",
                 MqConfigDom = new MqConfigDom()
                 {
                     MqHost = "127.0.0.1",

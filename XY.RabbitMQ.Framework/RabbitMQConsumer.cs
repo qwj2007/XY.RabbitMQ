@@ -1,5 +1,6 @@
 ﻿using RabbitMQ.Client.Events;
 using System;
+using System.CodeDom;
 using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
@@ -42,8 +43,8 @@ namespace XY.RabbitMQ.Framework
                     Context.ListenConnection = RabbitMQClientFactory.CreateConnection(Context.MqConfigDom);
                     //获取通道
                     Context.ListenChannel = RabbitMQClientFactory.CreateModel(Context.ListenConnection);
-                    //获取消息队列中有多少数据。
-                    int count = Convert.ToInt32(Context.ListenChannel.MessageCount(Context.ListenQueueName));
+                    //获取消息队列中有多少消息数量。
+                    //int count = Convert.ToInt32(Context.ListenChannel.MessageCount(Context.ListenQueueName));
                     //创建事件驱动的消费者模型
                     //QueueingBasicConsumer这个是队列的消费者
                     var consumer = new EventingBasicConsumer(Context.ListenChannel);
@@ -75,9 +76,7 @@ namespace XY.RabbitMQ.Framework
         {
             try
             {
-                
-                
-
+               // string info = Encoding.UTF8.GetString(e.Body);
                 var result = Message.BuildEventMessageResult(e.Body);
                 if (ActionMessage != null)
                     ActionMessage(result);//触发外部监听事件，处理此消息
@@ -85,7 +84,7 @@ namespace XY.RabbitMQ.Framework
                 if (!result.IsOperationOk)
                 {
                     //未能消费此消息，重新放入队列头
-                    Context.ListenChannel.BasicReject(e.DeliveryTag, true);
+                    //Context.ListenChannel.BasicReject(e.DeliveryTag, true);
                 }
                 else if (!Context.ListenChannel.IsClosed)
                 {

@@ -1,0 +1,15 @@
+E:\XY.RabbitMQ\NetCore.Common\bin\Debug\netcoreapp2.1\NetCore.Common.deps.json
+E:\XY.RabbitMQ\NetCore.Common\bin\Debug\netcoreapp2.1\NetCore.Common.dll
+E:\XY.RabbitMQ\NetCore.Common\bin\Debug\netcoreapp2.1\Microsoft.Extensions.Configuration.dll
+E:\XY.RabbitMQ\NetCore.Common\bin\Debug\netcoreapp2.1\Microsoft.Extensions.Configuration.Json.dll
+E:\XY.RabbitMQ\NetCore.Common\bin\Debug\netcoreapp2.1\Microsoft.Extensions.Configuration.xml
+E:\XY.RabbitMQ\NetCore.Common\bin\Debug\netcoreapp2.1\Microsoft.Extensions.Configuration.Json.xml
+E:\XY.RabbitMQ\NetCore.Common\obj\Debug\netcoreapp2.1\NetCore.Common.csprojAssemblyReference.cache
+E:\XY.RabbitMQ\NetCore.Common\obj\Debug\netcoreapp2.1\NetCore.Common.csproj.CoreCompileInputs.cache
+E:\XY.RabbitMQ\NetCore.Common\obj\Debug\netcoreapp2.1\NetCore.Common.AssemblyInfoInputs.cache
+E:\XY.RabbitMQ\NetCore.Common\obj\Debug\netcoreapp2.1\NetCore.Common.AssemblyInfo.cs
+E:\XY.RabbitMQ\NetCore.Common\obj\Debug\netcoreapp2.1\NetCore.Common.csproj.CopyComplete
+E:\XY.RabbitMQ\NetCore.Common\bin\Debug\netcoreapp2.1\Microsoft.Extensions.DependencyInjection.dll
+E:\XY.RabbitMQ\NetCore.Common\bin\Debug\netcoreapp2.1\Microsoft.Extensions.Options.dll
+E:\XY.RabbitMQ\NetCore.Common\bin\Debug\netcoreapp2.1\Microsoft.Extensions.DependencyInjection.xml
+E:\XY.RabbitMQ\NetCore.Common\bin\Debug\netcoreapp2.1\Microsoft.Extensions.Options.xml

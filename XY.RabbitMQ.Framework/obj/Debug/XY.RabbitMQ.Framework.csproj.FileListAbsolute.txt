@@ -10,3 +10,4 @@ E:\XY.RabbitMQ\XY.RabbitMQ.Framework\bin\Debug\Newtonsoft.Json.xml
 E:\XY.RabbitMQ\XY.RabbitMQ.Framework\bin\Debug\Microsoft.Diagnostics.Tracing.EventSource.dll
 E:\XY.RabbitMQ\XY.RabbitMQ.Framework\bin\Debug\Microsoft.Diagnostics.Tracing.EventSource.xml
 E:\XY.RabbitMQ\XY.RabbitMQ.Framework\bin\Debug\RabbitMQ.Client.xml
+E:\XY.RabbitMQ\XY.RabbitMQ.Framework\obj\Debug\XY.RabbitMQ.Framework.csprojAssemblyReference.cache

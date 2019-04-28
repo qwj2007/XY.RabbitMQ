@@ -28,7 +28,7 @@ namespace XY.RabbitMQ.Server
             LogLocation.Log = new LogInfo();
             RabbitMQClientContext context = new RabbitMQClientContext()
             {
-                ListenQueueName = "DirectQueue",
+                ListenQueueName = "HELLOQUEUES",
                 MqConfigDom = new MqConfigDom()
                 {
                     MqHost = "127.0.0.1",
