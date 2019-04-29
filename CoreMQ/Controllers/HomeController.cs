@@ -31,7 +31,11 @@ namespace CoreMQ.Controllers
             #region MQ第一种写法
 
             RabbitMQHelper mq = new RabbitMQHelper("RabbitMQConfig");
-            mq.SendMsg("卧槽卧槽卧槽");
+            for (int i = 0; i < 100000; i++)
+            {
+                mq.SendMsg("卧槽卧槽卧槽"+i.ToString());
+
+            }
 
             #endregion
 
@@ -110,7 +114,7 @@ namespace CoreMQ.Controllers
             });
 
             //委托第二种
-            mq.Receive("DirectQueue", getMessage);
+           // mq.Receive("DirectQueue", getMessage);
 
             #endregion
 
