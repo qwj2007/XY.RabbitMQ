@@ -103,15 +103,15 @@ namespace CoreMQ.Controllers
 
             #region MQ接收
             //委托第一种
-            mq.Receive("DirectQueue", item =>
-            {
-                string msg = JsonConvert.DeserializeObject<string>(item);
+            //mq.Receive("DirectQueue", item =>
+            //{
+            //    string msg = JsonConvert.DeserializeObject<string>(item);
                 
-                #region 业务逻辑操作
+            //    #region 业务逻辑操作
 
-                #endregion
+            //    #endregion
 
-            });
+            //});
 
             //委托第二种
            // mq.Receive("DirectQueue", getMessage);
